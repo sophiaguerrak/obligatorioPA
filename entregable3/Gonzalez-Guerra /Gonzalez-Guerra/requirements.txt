@@ -1,0 +1,4 @@
+ply==3.11
+pycobertura==2.0.0
+pytest==6.2.4
+#pytest --cov=./ --cov-report=term
