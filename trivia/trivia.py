@@ -1,7 +1,7 @@
 import pandas as pd
 from itertools import chain
 
-preguntas_todas = pd.read_csv('/Users/sophiaguerra/Downloads/Programacion avanzada/git/entregable1/trivia_questions.csv', delimiter=';')  # Cargamos las preguntas usando pandas
+preguntas_todas = pd.read_csv('trivia_questions.csv', delimiter=';')  # Cargamos las preguntas usando pandas
 
 def capitalizar_input(func):
     """
