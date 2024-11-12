@@ -52,7 +52,6 @@ pipeline {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'trivia/trivia.html'
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'USQL/main.html'
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'pedidos/docs/Main.html'
-                archiveArtifacts allowEmptyArchive: true, artifacts: 'pedidos/docs/index.html'
             }
         }
 
