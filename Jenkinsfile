@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        
+
         stage('Ajustar permisos') {
             steps {
                 sh 'chmod -R u+w USQL pedidos trivia'
@@ -42,20 +42,6 @@ pipeline {
                     sh 'java Main'
                     sh 'ls -l'
                 }
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                // Insert your test commands here, e.g., sh 'make test' or sh 'npm test'
-            }
-        }
-        
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                // Insert your deploy commands here, e.g., sh 'make deploy'
             }
         }
     }
