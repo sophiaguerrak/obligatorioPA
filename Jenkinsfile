@@ -2,23 +2,36 @@ pipeline {
     agent any
 
     stages {
-        stage('Correr python') {
+        stage('Correr trivia python') {
             steps {
                 sh 'source hola/bin/activate'
                 dir('trivia') {
                     sh 'python3 -m pip install -r requirements.txt'
                     echo 'Building trivia...'
                     sh 'python3 -m pydoc -w trivia.py'
-                }
-                
-
+                }    
             }
         }
 
-        stage('Correr java') {
+         stage('Correr USQL python') {
+            steps {
+                sh 'source hola/bin/activate'
+                dir('USQL') {
+                    sh 'python3 -m pip install -r requirements.txt'
+                    echo 'Building USQL...'
+                    sh 'python3 -m pydoc -w main.py'
+                }    
+            }
+        }
+
+        stage('Correr pedidos java') {
             steps {
                 echo 'Building...'
-                //javadoc del main
+                dir('pedidos') {
+                    sh 'javac Main.java'
+                    sh 'java Main'
+                    
+                }
             }
         }
         
