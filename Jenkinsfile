@@ -5,8 +5,9 @@ pipeline {
         stage('Correr python') {
             steps {
                 echo 'Building...'
+                sh 'source hola/bin/activate'
                 sh 'python3 -m pydoc -w trivia/trivia.py'
-                
+
             }
         }
 
