@@ -46,12 +46,7 @@ pipeline {
             }
         }
 
-        post {
-            always {
-                // Archivar los archivos HTML generados
-                archiveArtifacts artifacts: '**/docs/*.html', allowEmptyArchive: true
-            }
-        }
+        
 
         stage('Deploy') {
             steps {
