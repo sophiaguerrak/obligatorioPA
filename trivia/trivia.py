@@ -14,7 +14,7 @@ def capitalizar_input(func):
 
 @capitalizar_input
 def obtener_respuesta_usuario():
-    return input('Respuesta: ')
+    return 'hola'  # Simulamos la respuesta del usuario
 
 def hacer_pregunta(preguntas, puntaje):
     """
