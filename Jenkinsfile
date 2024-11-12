@@ -46,7 +46,14 @@ pipeline {
             }
         }
 
-        
+        stage('Archive') {
+            steps {
+                // Archivar el archivo trivia.html como artefacto
+                archiveArtifacts allowEmptyArchive: true, artifacts: 'trivia/trivia.html'
+                archiveArtifacts allowEmptyArchive: true, artifacts: 'USQL/main.html'
+                archiveArtifacts allowEmptyArchive: true, artifacts: 'pedidos/docs/Main.html'
+            }
+        }
 
         stage('Deploy') {
             steps {
