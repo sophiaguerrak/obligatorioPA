@@ -52,16 +52,9 @@ pipeline {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'trivia/trivia.html'
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'USQL/main.html'
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'pedidos/docs/Main.html'
-                archiveArtifacts allowEmptyArchive: true, artifacts: 'index.html'
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                sh 'python3 -m http.server 8000 &'
-                sleep 5
-            }
-        }
+        
     }
 }
