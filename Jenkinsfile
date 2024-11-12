@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('hola') {
+        
+        stage('Ajustar permisos') {
             steps {
-                sh 'ls -ld trivia USQL pedidos'
+                sh 'chmod -R u+w USQL pedidos trivia'
             }
         }
 
