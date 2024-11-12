@@ -1,5 +1,3 @@
-package entregable2_v2;
-
 import java.util.concurrent.Callable;
 
 public class EmpaquetadoTask implements Callable<Boolean> {

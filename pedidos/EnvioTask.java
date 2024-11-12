@@ -1,5 +1,3 @@
-package entregable2_v2;
-
 public class EnvioTask implements Runnable {
     private final Pedido pedido;
 

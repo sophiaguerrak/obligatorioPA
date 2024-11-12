@@ -1,5 +1,3 @@
-package entregable2_v2;
-
 public class Pedido implements Comparable<Pedido> {
     private final String id;
     private final boolean esUrgente;
