@@ -9,6 +9,7 @@ pipeline {
                     sh 'python3 -m pip install -r requirements.txt'
                     echo 'Building trivia...'
                     sh 'python3 -m pydoc -w trivia.py'
+                    sh 'ls -l'
                 }    
             }
         }
@@ -20,6 +21,7 @@ pipeline {
                     sh 'python3 -m pip install -r requirements.txt'
                     echo 'Building USQL...'
                     sh 'python3 -m pydoc -w main.py'
+                    sh 'ls -l'
                 }    
             }
         }
@@ -31,6 +33,7 @@ pipeline {
                     sh 'javac EmpaquetadoTask.java EnvioTask.java PagoTask.java Pedido.java ProcesadorPedidos.java'
                     sh 'javac Main.java'
                     sh 'java Main'
+                    sh 'ls -l'
                 }
             }
         }

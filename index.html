@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimos Builds de Jenkins</title>
+</head>
+<body>
+    <h1>Últimos Builds de Jenkins</h1>
+    <div id="builds-container"></div>
+
+    <script>
+        const jenkinsApiUrl = 'http://localhost:8080/job/obligPA/job/main/api/json?tree=builds[number,url]{0,1}';
+        
+        // Replace 'your-username' with your Jenkins username and 'your-api-token' with your API token
+        const username = 'sophiaguerra';
+        const apiToken = '11310e018696e245f23f28923669c58c70';
+        
+        async function obtenerBuilds() {
+            try {
+                const response = await fetch(jenkinsApiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(username + ':' + apiToken)
+                    }
+                });
+
+                if (!response.ok) throw new Error('Error al obtener los datos de Jenkins');
+
+                const data = await response.json();
+                const buildsContainer = document.getElementById('builds-container');
+                buildsContainer.innerHTML = ''; // Limpia el contenedor
+
+                // Recorre cada build y crea los botones
+                data.builds.forEach(build => {
+                    const buildDiv = document.createElement('div');
+                    buildDiv.className = 'build';
+                    buildDiv.innerHTML = `<h3>Build #${build.number}</h3>`;
+                    
+
+                const stages = [
+                { name: 'Correr trivia python', url: `${build.url}artifact/trivia/trivia.html` },
+                { name: 'Correr USQL python', url: `${build.url}artifact/USQL/main.html` },
+                { name: 'Correr pedidos java', url: `${build.url}artifact/pedidos/empaketado.html` }
+                ];
+
+                // Crear botones para abrir los archivos HTML generados en cada etapa
+                stages.forEach(stage => {
+                    const button = document.createElement('button');
+                    button.textContent = `Abrir ${stage.name}`;
+                    button.onclick = () => window.open(stage.url, '_blank');
+                    buildDiv.appendChild(button);
+                });
+
+                buildsContainer.appendChild(buildDiv);
+                });
+            } catch (error) {
+                console.error('Error al obtener los builds:', error);
+            }
+        }
+
+        obtenerBuilds();
+    </script>
+</body>
+</html>
+
