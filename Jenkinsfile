@@ -15,7 +15,7 @@ pipeline {
                 dir('trivia') {
                     sh 'python3 -m pip install -r requirements.txt'
                     echo 'Building trivia...'
-                    sh 'python3 -m pydoc -w trivia.py'
+                    sh 'python3 -m pydoc -w trivia'
                     sh 'ls -l'
                 }    
             }
@@ -27,7 +27,7 @@ pipeline {
                 dir('USQL') {
                     sh 'python3 -m pip install -r requirements.txt'
                     echo 'Building USQL...'
-                    sh 'python3 -m pydoc -w main.py'
+                    sh 'python3 -m pydoc -w main'
                     sh 'ls -l'
                 }    
             }
