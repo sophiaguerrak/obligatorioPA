@@ -9,11 +9,15 @@ def capitalizar_input(func):
     """
     def wrapper(*args, **kwargs):
         respuesta = func(*args, **kwargs)
-        return respuesta.capitalize()  # Capitaliza la primera letra (todas las respuestas están en mayúscula). El resto de los caracteres se convierten a lowercase.
+        return respuesta.capitalize()  # Capitaliza la primera letra (todas las respuestas están en mayúscula).
+    wrapper.__doc__ = func.__doc__  # Asegura que el docstring se preserve
     return wrapper
 
 @capitalizar_input
 def obtener_respuesta_usuario():
+    """
+    Función que simula la respuesta del usuario.
+    """
     return 'hola'  # Simulamos la respuesta del usuario
 
 def hacer_pregunta(preguntas, puntaje):
