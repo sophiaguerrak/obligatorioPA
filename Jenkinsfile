@@ -40,8 +40,17 @@ pipeline {
                     sh 'javac EmpaquetadoTask.java EnvioTask.java PagoTask.java Pedido.java ProcesadorPedidos.java'
                     sh 'javac Main.java'
                     sh 'java Main'
+                    sh 'javadoc -d docs Main.java'
                     sh 'ls -l'
                 }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                sh 'python3 -m http.server 8000 &'
+                sleep 5
             }
         }
     }
