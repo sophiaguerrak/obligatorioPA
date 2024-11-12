@@ -52,7 +52,7 @@ pipeline {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'trivia/trivia.html'
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'USQL/main.html'
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'pedidos/docs/Main.html'
-                archiveArtifacts allowEmptyArchive: true, artifacts: 'docs/*'
+                archiveArtifacts allowEmptyArchive: true, artifacts: 'pedidos/docs/*'
             }
         }
 
@@ -60,7 +60,7 @@ pipeline {
             steps {
                 echo 'Testing...'
                 dir('USQL') {
-                    sh 'python3 -m pytest test_project.py'
+                    sh 'python3 -m pytest test_proyect.py'
                 }
             }
         }
