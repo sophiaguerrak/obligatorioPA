@@ -5,8 +5,8 @@ pipeline {
         stage('Correr python') {
             steps {
                 sh 'source hola/bin/activate'
-                sh 'python3 -m pip install -r requirements.txt'
                 dir('trivia') {
+                    sh 'python3 -m pip install -r requirements.txt'
                     echo 'Building trivia...'
                     sh 'python3 -m pydoc -w trivia.py'
                 }
