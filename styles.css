@@ -1,0 +1,91 @@
+/* Establece la fuente y el fondo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    text-align: center;
+    color: #4A90E2;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: blueviolet;
+}
+
+/* Contenedor principal de los builds */
+#builds-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Estilo para cada sección de build */
+.build {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin: 10px 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Títulos de cada build */
+.build h3 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre los botones */
+button:hover {
+    background-color: #357ABD;
+}
+
+/* Añadir márgenes entre los botones */
+button + button {
+    margin-left: 10px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    #builds-container {
+        padding: 10px;
+    }
+
+    .build {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

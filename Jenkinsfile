@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Correr trivia python') {
+        stage('Correr Trivia - Python') {
             steps {
                 sh 'source hola/bin/activate'
                 dir('trivia') {
@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-         stage('Correr USQL python') {
+         stage('Correr USQL - Python') {
             steps {
                 sh 'source hola/bin/activate'
                 dir('USQL') {
@@ -26,7 +26,7 @@ pipeline {
             }
         }
 
-        stage('Correr pedidos java') {
+        stage('Correr Pedidos - Java') {
             steps {
                 echo 'Building...'
                 dir('pedidos') {
