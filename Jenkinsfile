@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'source hola/bin/activate'
+                sh 'pip install -r trivia/requirements.txt'
                 sh 'python3 -m pydoc -w trivia/trivia.py'
 
             }
