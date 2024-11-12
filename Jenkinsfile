@@ -62,6 +62,10 @@ pipeline {
                 dir('USQL') {
                     sh 'python3 -m pytest test_proyect.py'
                 }
+                dir('pedidos') {
+                    sh 'javac TestsUnificados.java'
+                    sh 'java TestsUnificados'
+                }
             }
         }
         
