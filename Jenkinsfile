@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('hola') {
+            steps {
+                sh 'ls -ld trivia USQL pedidos'
+            }
+        }
+
         stage('Correr Trivia - Python') {
             steps {
                 sh 'source hola/bin/activate'
