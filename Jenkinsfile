@@ -28,9 +28,9 @@ pipeline {
             steps {
                 echo 'Building...'
                 dir('pedidos') {
+                    sh 'javac EmpaquetadoTask.java EnvioTask.java PagoTask.java Pedido.java ProcesadorPedidos.java'
                     sh 'javac Main.java'
                     sh 'java Main'
-                    
                 }
             }
         }
